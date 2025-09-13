@@ -27,14 +27,6 @@ const bookingSchema = new mongoose.Schema({
         type: String,
         enum: ['booked', 'in-progress', 'completed', 'cancelled'],
         default: 'booked'
-    },
-    powerUsed: {
-        type: Number,   // in kWh
-        default: 0
-    },
-    amountCharged: {
-        type: Number,   // e.g., in INR
-        default: 0
     }
 }, {
     timestamps: true  // createdAt & updatedAt
