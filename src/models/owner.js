@@ -18,26 +18,10 @@ const ownerSchema = new mongoose.Schema({
             message: 'Please provide a valid email address'
         }
     },
-    phone: {
-        type: String,
-        required: [true, 'Phone number is required'],
-        trim: true,
-        validate: {
-            validator: function (value) {
-                return validator.isMobilePhone(value, ['any']);  // Accepts international numbers
-            },
-            message: 'Please provide a valid phone number'
-        }
-    },
     password: {
         type: String,
         required: [true, 'Password is required'],
         minlength: [6, 'Password must be at least 6 characters']
-    },
-    role: {
-        type: String,
-        enum: ['admin', 'manager'],
-        default: 'manager'
     }
 }, {
     timestamps: true   // createdAt & updatedAt are auto-added as Date
